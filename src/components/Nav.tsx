@@ -15,11 +15,13 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
+      aria-label="Site navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/5"
@@ -30,6 +32,7 @@ export default function Nav() {
         {/* Monogram */}
         <a
           href="#"
+          aria-label="Home"
           className="font-display font-bold text-lg text-white tracking-tight"
         >
           C·D
@@ -41,7 +44,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[10px] font-medium tracking-[2px] uppercase text-neutral-500 hover:text-white transition-colors duration-200"
+              className="py-1 text-[10px] font-medium tracking-[2px] uppercase text-neutral-500 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
