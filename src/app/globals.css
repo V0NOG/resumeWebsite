@@ -63,3 +63,15 @@ body {
 }
 
 .pulse { animation: availability-pulse 2s ease-in-out infinite; }
+
+/* Mobile bento grid — collapse to single column */
+@media (max-width: 767px) {
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+  }
+  .bento-grid > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+  }
+}

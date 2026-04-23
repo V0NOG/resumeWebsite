@@ -43,10 +43,10 @@ export default function ContactBar() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="mailto:stormbreaker128@gmail.com"
+              href="mailto:connor@drainas.com"
               className="text-[10px] tracking-wide uppercase text-neutral-500 hover:text-white px-4 py-2 rounded-full border border-white/10 hover:border-white/20 transition-all"
             >
-              Email
+              connor@drainas.com
             </a>
             <a
               href="https://github.com/V0NOG"

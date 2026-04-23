@@ -9,10 +9,10 @@ export default function Hero() {
       </p>
 
       {/* Editorial display type — Chiara Luzzana style */}
-      <h1 className="font-display font-black leading-[0.95] tracking-[-3px] mb-10"
-           style={{ fontSize: "clamp(64px, 10vw, 130px)" }}>
-        <span className="text-stroke block">FULL-STACK</span>
-        <span className="text-white block">ENGINEER</span>
+      <h1 className="font-display font-black leading-[0.95] tracking-[-2px] mb-10"
+           style={{ fontSize: "clamp(48px, 7.5vw, 110px)" }}>
+        <span className="text-stroke block">FULL STACK</span>
+        <span className="text-white block">SOFTWARE ENGINEER</span>
         <span className="text-stroke-blue block">+ CLOUD</span>
       </h1>
 
