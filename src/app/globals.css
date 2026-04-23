@@ -2,7 +2,7 @@
 
 @theme {
   --color-canvas: #0a0a0f;
-  --color-card: rgba(255, 255, 255, 0.03);
+  --color-card: rgb(255 255 255 / 3%);
 
   --font-display: var(--font-playfair), Georgia, serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -57,9 +57,9 @@ body {
 }
 
 /* Availability pulse */
-@keyframes pulse {
+@keyframes availability-pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
 
-.pulse { animation: pulse 2s ease-in-out infinite; }
+.pulse { animation: availability-pulse 2s ease-in-out infinite; }
