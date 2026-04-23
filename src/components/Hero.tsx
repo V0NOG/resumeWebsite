@@ -3,18 +3,18 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-8 md:px-16 max-w-7xl mx-auto">
 
       {/* Eyebrow */}
-      <div className="flex items-center gap-4 mb-8 text-neutral-600 text-[10px] tracking-[3px] uppercase">
+      <p className="flex items-center gap-4 mb-8 text-neutral-600 text-[10px] tracking-[3px] uppercase">
         <span className="w-8 h-px bg-neutral-700 block" />
         Available · Dual EU Citizen · Relocating Europe Sept 2026
-      </div>
+      </p>
 
       {/* Editorial display type — Chiara Luzzana style */}
-      <div className="font-display font-black leading-[0.9] tracking-[-3px] mb-10"
+      <h1 className="font-display font-black leading-[0.95] tracking-[-3px] mb-10"
            style={{ fontSize: "clamp(64px, 10vw, 130px)" }}>
-        <div className="text-stroke block">FULL-STACK</div>
-        <div className="text-white block">ENGINEER</div>
-        <div className="text-stroke-blue block">+ CLOUD</div>
-      </div>
+        <span className="text-stroke block">FULL-STACK</span>
+        <span className="text-white block">ENGINEER</span>
+        <span className="text-stroke-blue block">+ CLOUD</span>
+      </h1>
 
       {/* Sub-row */}
       <div className="flex flex-col md:flex-row gap-8 md:items-center">
@@ -32,10 +32,10 @@ export default function Hero() {
           </a>
           <a
             href="/resume.pdf"
-            download
+            download="Connor_Drainas_Resume.pdf"
             className="text-[11px] tracking-[1.5px] uppercase text-neutral-500 hover:text-white transition-colors"
           >
-            ↓ Download CV
+            <span aria-hidden="true">↓ </span>Download CV
           </a>
         </div>
       </div>
