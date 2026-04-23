@@ -4,6 +4,7 @@ import BentoGrid from "@/components/BentoGrid";
 import AboutCard from "@/components/cards/AboutCard";
 import SkillsCard from "@/components/cards/SkillsCard";
 import YearsCard from "@/components/cards/YearsCard";
+import ExperienceCard from "@/components/cards/ExperienceCard";
 import FeaturedProjectCard from "@/components/cards/FeaturedProjectCard";
 import ProjectCard from "@/components/cards/ProjectCard";
 import ContactBar from "@/components/cards/ContactBar";
@@ -25,13 +26,11 @@ export default function Home() {
       <Nav />
       <Hero />
       <BentoGrid>
-        {/* Row 1: About + Skills + Years */}
         <AboutCard />
         <SkillsCard />
         <YearsCard />
-        {/* Row 2: Featured project */}
+        <ExperienceCard />
         <FeaturedProjectCard />
-        {/* Rows 3–4: remaining projects */}
         {nonFeatured.map((project, i) => (
           <ProjectCard
             key={project.id}
@@ -40,7 +39,6 @@ export default function Home() {
             rowSpan={projectLayouts[i]?.rowSpan ?? 2}
           />
         ))}
-        {/* Contact bar */}
         <ContactBar />
       </BentoGrid>
     </main>
