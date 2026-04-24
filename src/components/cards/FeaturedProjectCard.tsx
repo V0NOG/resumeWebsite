@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function FeaturedProjectCard() {
@@ -24,13 +25,21 @@ export default function FeaturedProjectCard() {
         ))}
       </div>
 
-      <h3 className="font-display font-bold text-white text-2xl mb-3 leading-tight">
+      <h3 className="font-display font-bold text-white text-2xl mb-2 leading-tight">
         {project.name}
       </h3>
-      <p className="text-neutral-500 text-sm leading-relaxed mb-2">{project.description}</p>
-      <p className="text-neutral-600 text-xs leading-relaxed">{project.detail}</p>
+      <p className="text-neutral-500 text-sm leading-relaxed mb-3">{project.description}</p>
 
-      <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
+      <ul className="space-y-1.5 mb-3">
+        {project.outcomes.slice(0, 2).map((outcome) => (
+          <li key={outcome} className="flex items-start gap-2 text-neutral-600 text-xs">
+            <span className="text-blue-400 shrink-0" aria-hidden="true">—</span>
+            {outcome}
+          </li>
+        ))}
+      </ul>
+
+      <div className="mt-auto pt-4 border-t border-white/5 flex items-center gap-4">
         {project.githubUrl && (
           <a
             href={project.githubUrl}
@@ -38,12 +47,15 @@ export default function FeaturedProjectCard() {
             rel="noopener noreferrer"
             className="text-[10px] tracking-[1px] uppercase text-blue-400 hover:text-blue-300 transition-colors"
           >
-            View on GitHub →
+            GitHub <span aria-hidden="true">→</span>
           </a>
         )}
-        <p className="text-[9px] text-neutral-700 tracking-wide">
-          Risk mgmt · Anti-overfitting · Pure Python
-        </p>
+        <Link
+          href={`/projects/${project.id}`}
+          className="text-[10px] tracking-[1px] uppercase text-neutral-500 hover:text-white transition-colors"
+        >
+          Full case study <span aria-hidden="true">→</span>
+        </Link>
       </div>
     </div>
   );

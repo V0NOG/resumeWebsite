@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Project } from "@/data/projects";
 
 type Props = {
@@ -39,7 +40,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
         </p>
       )}
 
-      <div className="mt-auto flex items-center gap-4">
+      <div className="mt-auto flex items-center gap-3 flex-wrap">
         {project.liveUrl && (
           <a
             href={project.liveUrl}
@@ -47,7 +48,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             rel="noopener noreferrer"
             className="text-[10px] text-blue-400 hover:text-blue-300 transition-colors tracking-wide"
           >
-            Visit →
+            Visit <span aria-hidden="true">→</span>
           </a>
         )}
         {project.githubUrl && (
@@ -57,9 +58,15 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             rel="noopener noreferrer"
             className="text-[10px] text-neutral-500 hover:text-neutral-300 transition-colors tracking-wide"
           >
-            GitHub →
+            GitHub <span aria-hidden="true">→</span>
           </a>
         )}
+        <Link
+          href={`/projects/${project.id}`}
+          className="text-[10px] text-neutral-500 hover:text-white transition-colors tracking-wide"
+        >
+          Details <span aria-hidden="true">→</span>
+        </Link>
         <button
           onClick={() => setExpanded(!expanded)}
           className="ml-auto text-[9px] text-neutral-600 hover:text-neutral-400 transition-colors uppercase tracking-wide"
