@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Connor Drainas — Full-Stack Engineer",
   description:
-    "Full-stack software engineer with 6+ years of production experience. React, Node.js, AWS, Docker. Dual EU citizen relocating to Europe September 2026.",
+    "Full-stack software engineer with 6+ years of production experience. React, Node.js, AWS, Docker. Dual EU citizen relocating to Europe August 2026.",
   keywords: ["software engineer", "full-stack", "React", "Node.js", "AWS", "EU", "Europe", "cloud"],
   openGraph: {
     title: "Connor Drainas — Full-Stack Engineer",

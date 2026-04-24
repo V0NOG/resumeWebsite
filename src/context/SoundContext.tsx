@@ -74,8 +74,8 @@ export function SoundProvider({ children }: { children: React.ReactNode }) {
   const toggle = useCallback(() => {
     setMuted((prev) => {
       const next = !prev;
-      localStorage.setItem("sound-enabled", String(next));
-      return !next;
+      localStorage.setItem("sound-enabled", String(!next));
+      return next;
     });
   }, []);
 

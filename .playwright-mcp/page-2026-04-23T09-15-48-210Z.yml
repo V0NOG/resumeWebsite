@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - heading "A creator of" [level=2] [ref=e5]
+    - generic [ref=e6]:
+      - figure [ref=e7]:
+        - generic [ref=e8]:
+          - heading "sound" [level=2] [ref=e9]
+          - heading "sound" [level=2] [ref=e10]
+      - heading ". From pure" [level=2] [ref=e11]
+    - heading "noise to melody," [level=2] [ref=e13]
+    - heading "everyday life" [level=2] [ref=e15]
+    - generic [ref=e16]:
+      - heading "is her" [level=2] [ref=e17]
+      - figure [ref=e18]:
+        - generic [ref=e19]:
+          - heading "Symphony" [level=2] [ref=e20]
+          - heading "Symphony" [level=2] [ref=e21]
+      - heading "." [level=2] [ref=e22]
+  - link "sound" [ref=e23] [cursor=pointer]:
+    - /url: "#"
+  - link "trigger" [ref=e25] [cursor=pointer]:
+    - /url: "#"
+  - navigation [ref=e26]:
+    - link "logo" [ref=e27] [cursor=pointer]:
+      - /url: /
+      - img [ref=e29]
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - img [ref=e42]
+      - generic [ref=e45]:
+        - heading "PURity" [level=2] [ref=e47]
+        - heading "oddity" [level=2] [ref=e49]
+    - generic [ref=e50]:
+      - img [ref=e53]
+      - generic [ref=e56]:
+        - heading "noise" [level=1] [ref=e58]
+        - heading "sound" [level=1] [ref=e60]
+    - generic [ref=e62]: "\"Everyday life is her sound\""

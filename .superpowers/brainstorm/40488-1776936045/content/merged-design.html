@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merged Design Concept</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #0a0a0f;
+    color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    /* Dot grid background like Pierre-Louis */
+    background-image: radial-gradient(circle, #1a1a2e 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(10,10,15,0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+  }
+  .nav-links span { cursor: pointer; transition: color 0.2s; }
+  .nav-links span:hover { color: #fff; }
+  .nav-hire {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s;
+  }
+  .nav-hire:hover { background: #fff; color: #000; }
+
+  /* HERO — Chiara-style editorial typography */
+  .hero {
+    padding: 140px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: #444;
+    display: inline-block;
+  }
+  .hero-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(64px, 9vw, 120px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -3px;
+    margin-bottom: 32px;
+  }
+  /* Stroke/outline text like Chiara */
+  .text-stroke {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255,255,255,0.3);
+  }
+  .text-filled { color: #ffffff; }
+  .text-accent {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #3b82f6;
+  }
+  .hero-sub {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  .hero-tagline {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+    max-width: 280px;
+    border-left: 1px solid #222;
+    padding-left: 20px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 4px;
+  }
+  .btn-primary {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    background: #fff;
+    color: #000;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+  .btn-secondary {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #444;
+    cursor: pointer;
+  }
+
+  /* BENTO GRID — Pierre-Louis style */
+  .bento {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 80px;
+    gap: 12px;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.12); }
+  .card-label {
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .card-body {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.7;
+    margin-top: 6px;
+  }
+
+  /* Card spans */
+  .span-5 { grid-column: span 5; grid-row: span 4; }
+  .span-4 { grid-column: span 4; grid-row: span 4; }
+  .span-3 { grid-column: span 3; grid-row: span 4; }
+  .span-7 { grid-column: span 7; grid-row: span 3; }
+  .span-5-3 { grid-column: span 5; grid-row: span 3; }
+  .span-4-2 { grid-column: span 4; grid-row: span 2; }
+  .span-3-2 { grid-column: span 3; grid-row: span 2; }
+  .span-6-2 { grid-column: span 6; grid-row: span 2; }
+  .span-full { grid-column: span 12; grid-row: span 1; }
+
+  /* Skills card */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .skill-tag {
+    font-size: 10px;
+    color: #3b82f6;
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  /* Project card accent */
+  .card-accent-blue { border-color: rgba(59,130,246,0.2); }
+  .card-accent-purple { border-color: rgba(139,92,246,0.2); }
+
+  .live-dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    margin-right: 6px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+  }
+  .tag-blue { color: #60a5fa; background: rgba(59,130,246,0.1); }
+  .tag-purple { color: #a78bfa; background: rgba(139,92,246,0.1); }
+  .tag-green { color: #34d399; background: rgba(52,211,153,0.1); }
+
+  .divider {
+    grid-column: span 12;
+    height: 1px;
+    background: rgba(255,255,255,0.04);
+    grid-row: span 1;
+  }
+
+  .availability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    color: #22c55e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">C·D</div>
+    <div class="nav-links">
+      <span>Skills</span>
+      <span>Work</span>
+      <span>Projects</span>
+      <span>Contact</span>
+    </div>
+    <div class="nav-hire">Hire Me</div>
+  </nav>
+
+  <!-- HERO: Chiara-style editorial type -->
+  <div class="hero">
+    <div class="hero-eyebrow">Available · Dual EU Citizen · Relocating Europe Sept 2026</div>
+    <div class="hero-display">
+      <div class="text-stroke">FULL-STACK</div>
+      <div class="text-filled">ENGINEER</div>
+      <div class="text-accent">+ CLOUD</div>
+    </div>
+    <div class="hero-sub">
+      <div class="hero-tagline">
+        Connor Drainas — 6+ years shipping production SaaS across finance and custom product environments. React, Node.js, AWS, Docker.
+      </div>
+      <div class="hero-ctas">
+        <div class="btn-primary">View Projects</div>
+        <div class="btn-secondary">↓ Download CV</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BENTO GRID: Pierre-Louis style dashboard -->
+  <div class="bento">
+
+    <!-- About card (wide) -->
+    <div class="card span-5" style="background: rgba(59,130,246,0.04); border-color: rgba(59,130,246,0.1);">
+      <div class="card-label">About</div>
+      <div class="card-title">Building reliable software, shipping to production.</div>
+      <div class="card-body" style="margin-top:12px;">
+        Dual Greek–Australian citizen. Currently completing a Bachelor of CS (Cybersecurity major) at UoW, final semester.
+        <br><br>
+        Actively pursuing mid-to-senior EU engineering roles.
+      </div>
+      <div class="availability">
+        <span class="live-dot"></span>
+        Open to work · Remote now · On-site Sept 2026
+      </div>
+    </div>
+
+    <!-- Skills card -->
+    <div class="card span-4">
+      <div class="card-label">Core Skills</div>
+      <div class="skills-grid">
+        <div class="skill-tag">React</div>
+        <div class="skill-tag">TypeScript</div>
+        <div class="skill-tag">Node.js</div>
+        <div class="skill-tag">MongoDB</div>
+        <div class="skill-tag">Docker</div>
+        <div class="skill-tag">AWS</div>
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">Bash</div>
+      </div>
+      <div style="margin-top:12px; padding-top:12px; border-top:1px solid rgba(255,255,255,0.05);">
+        <div style="font-size:10px; color:#555; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Security</div>
+        <div class="skill-tag" style="color:#f59e0b; background:rgba(245,158,11,0.08); border-color:rgba(245,158,11,0.15);">Pentesting</div>
+        <div class="skill-tag" style="color:#f59e0b; background:rgba(245,158,11,0.08); border-color:rgba(245,158,11,0.15);">OSINT</div>
+      </div>
+    </div>
+
+    <!-- Stat cards -->
+    <div class="card span-3" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div class="card-label">Experience</div>
+        <div style="font-family:'Playfair Display',serif; font-size:52px; font-weight:900; color:#fff; line-height:1;">6+</div>
+        <div style="font-size:11px; color:#444; margin-top:4px;">years in production</div>
+      </div>
+      <div style="font-size:10px; color:#333; letter-spacing:1px; text-transform:uppercase;">2015 → Present</div>
+    </div>
+
+    <!-- Featured project -->
+    <div class="card span-7 card-accent-blue" style="grid-row: span 3;">
+      <div style="margin-bottom:8px;">
+        <span class="tag tag-blue">Python</span>
+        <span class="tag tag-purple">Quantitative</span>
+      </div>
+      <div class="card-title" style="font-size:26px; margin-bottom:10px;">Crypto Trading Bot v2</div>
+      <div class="card-body">
+        Professional-grade backtesting framework for intraday crypto strategies. RSI + Bollinger Band mean reversion, walk-forward validation, zero external dependencies.
+      </div>
+      <div style="margin-top:auto; padding-top:20px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-size:10px; color:#3b82f6; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">View on GitHub →</div>
+        <div style="font-size:9px; color:#333;">Risk mgmt · Anti-overfitting · Pure Python</div>
+      </div>
+    </div>
+
+    <!-- Client site 1 -->
+    <div class="card span-5-3">
+      <div style="margin-bottom:6px;">
+        <span class="tag tag-green">Live</span>
+        <span class="tag tag-blue">React</span>
+      </div>
+      <div class="card-title" style="font-size:16px;">OCI International Furniture</div>
+      <div class="card-body">Production client website. Deployed on AWS.</div>
+      <div style="margin-top:12px; font-size:10px; color:#3b82f6; cursor:pointer;">ocinternationalfurniture.com →</div>
+    </div>
+
+    <!-- Client site 2 -->
+    <div class="card span-5-3">
+      <div style="margin-bottom:6px;">
+        <span class="tag tag-green">Live</span>
+        <span class="tag tag-blue">React</span>
+      </div>
+      <div class="card-title" style="font-size:16px;">Cura Commercial</div>
+      <div class="card-body">Full-stack commercial services website. End-to-end delivery.</div>
+      <div style="margin-top:12px; font-size:10px; color:#3b82f6; cursor:pointer;">curacommercial.com.au →</div>
+    </div>
+
+    <!-- MagiReads -->
+    <div class="card span-4-2 card-accent-purple">
+      <div style="margin-bottom:4px;">
+        <span class="tag tag-purple">Next.js</span>
+        <span class="tag tag-green">Docker</span>
+      </div>
+      <div class="card-title" style="font-size:15px;">MagiReads</div>
+      <div class="card-body">Manga platform + custom scraper API</div>
+    </div>
+
+    <!-- OSINT -->
+    <div class="card span-4-2">
+      <div style="margin-bottom:4px;">
+        <span class="tag" style="color:#f59e0b; background:rgba(245,158,11,0.1);">Security</span>
+        <span class="tag tag-blue">Python</span>
+      </div>
+      <div class="card-title" style="font-size:15px;">OSINT Toolkit</div>
+      <div class="card-body">Intelligence gathering tools</div>
+    </div>
+
+    <!-- Homelab -->
+    <div class="card span-4-2">
+      <div style="margin-bottom:4px;">
+        <span class="tag tag-blue">Next.js</span>
+        <span class="tag tag-green">Prisma</span>
+      </div>
+      <div class="card-title" style="font-size:15px;">Homelab Dashboard</div>
+      <div class="card-body">Internal tooling, Docker Compose</div>
+    </div>
+
+    <!-- Contact bar -->
+    <div class="card span-full" style="grid-row: span 2; display:flex; align-items:center; justify-content:space-between; padding: 20px 32px;">
+      <div>
+        <div style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:#fff;">Open to EU opportunities</div>
+        <div style="font-size:12px; color:#444; margin-top:4px;">Greek–Australian dual citizen · Full EU right to work · Relocating September 2026</div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <div style="padding:10px 20px; background:#fff; color:#000; border-radius:20px; font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">Get in Touch</div>
+        <div style="padding:10px 20px; border:1px solid rgba(255,255,255,0.1); color:#888; border-radius:20px; font-size:11px; letter-spacing:1px; text-transform:uppercase; cursor:pointer;">Download CV</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

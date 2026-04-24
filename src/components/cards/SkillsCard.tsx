@@ -7,7 +7,7 @@ export default function SkillsCard() {
       className="bento-card p-6"
       style={{ gridColumn: "span 4", gridRow: "span 4" }}
     >
-      <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-4">Core Skills</p>
+      <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-400 mb-4">Core Skills</p>
 
       <div className="grid grid-cols-2 gap-1.5 mb-4">
         {coreSkills.map((skill) => (

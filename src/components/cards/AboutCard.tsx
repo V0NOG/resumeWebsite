@@ -21,7 +21,7 @@ export default function AboutCard() {
 
       <div className="mt-auto pt-4 border-t border-white/5 flex items-center gap-2 text-[10px] text-emerald-400 tracking-[1px] uppercase">
         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse" aria-hidden="true" />
-        Open to work · Remote now · On-site Sept 2026
+        Open to work · Remote now
       </div>
     </div>
   );

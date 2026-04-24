@@ -1,0 +1,17 @@
+[     892ms] [LOG] true null @ https://www.chiaraluzzana.com/:53
+[     893ms] [LOG] false @ https://www.chiaraluzzana.com/:487
+[    1925ms] [LOG] 0 @ https://www.chiaraluzzana.com/:453
+[    1927ms] Uncaught TypeError: Cannot read properties of null (reading 'offsetHeight')
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:28591)
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:28349)
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:46075)
+    at e (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:45500)
+    at initSmoothScroll (https://www.chiaraluzzana.com/:453:460)
+    at <anonymous> (https://www.chiaraluzzana.com/:453:1086)
+[    5382ms] [LOG] hello there @ https://www.chiaraluzzana.com/:505
+[   17365ms] Uncaught TypeError: Cannot convert undefined or null to object
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:31316)
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:30657)
+[   17376ms] Uncaught TypeError: Cannot convert undefined or null to object
+    at value (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:31316)
+    at <anonymous> (https://cdn.jsdelivr.net/npm/locomotive-scroll@4.0.3/dist/locomotive-scroll.min.js:0:30961)

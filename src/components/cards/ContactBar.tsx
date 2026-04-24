@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
 
 export default function ContactBar() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("open-contact", handler);
+    return () => window.removeEventListener("open-contact", handler);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,7 +44,7 @@ export default function ContactBar() {
               Open to EU opportunities
             </p>
             <p className="text-neutral-400 text-xs">
-              Greek–Australian dual citizen · Full EU right to work · Relocating September 2026
+              Greek–Australian dual citizen · Full EU right to work · Relocating August 2026
             </p>
           </div>
           <div className="flex items-center gap-3">

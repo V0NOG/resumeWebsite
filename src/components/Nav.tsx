@@ -59,13 +59,16 @@ export default function Nav() {
         {/* Right side: sound toggle + CTA */}
         <div className="flex items-center gap-4">
           <SoundToggle />
-          <a
-            href="#contact"
-            onClick={playTick}
+          <button
+            onClick={() => {
+              playTick();
+              window.dispatchEvent(new CustomEvent("open-contact"));
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-2.5 rounded-full border border-white/15 text-white hover:bg-white hover:text-black transition-all duration-200"
           >
             Hire Me
-          </a>
+          </button>
         </div>
       </div>
     </nav>

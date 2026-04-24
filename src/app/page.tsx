@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TechMarquee from "@/components/TechMarquee";
 import BentoGrid from "@/components/BentoGrid";
 import AboutCard from "@/components/cards/AboutCard";
 import SkillsCard from "@/components/cards/SkillsCard";
@@ -28,6 +29,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Nav />
       <Hero />
+      <TechMarquee />
       <BentoGrid>
         <AboutCard />
         <SkillsCard />
