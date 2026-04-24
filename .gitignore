@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tooling / internal
+.omc/
+.claude/
+.superpowers/
+.playwright-mcp/
+*.png
+*.jpg
+*.jpeg
