@@ -46,6 +46,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Visit ${project.name}`}
             className="text-[10px] text-blue-400 hover:text-blue-300 transition-colors tracking-wide"
           >
             Visit <span aria-hidden="true">→</span>
@@ -56,6 +57,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${project.name} on GitHub`}
             className="text-[10px] text-neutral-500 hover:text-neutral-300 transition-colors tracking-wide"
           >
             GitHub <span aria-hidden="true">→</span>
@@ -63,6 +65,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
         )}
         <Link
           href={`/projects/${project.id}`}
+          aria-label={`Details — ${project.name}`}
           className="text-[10px] text-neutral-500 hover:text-white transition-colors tracking-wide"
         >
           Details <span aria-hidden="true">→</span>

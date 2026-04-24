@@ -2,7 +2,8 @@ import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function FeaturedProjectCard() {
-  const project = projects.find((p) => p.featured)!;
+  const project = projects.find((p) => p.featured);
+  if (!project) return null;
 
   return (
     <div
@@ -45,6 +46,7 @@ export default function FeaturedProjectCard() {
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${project.name} on GitHub`}
             className="text-[10px] tracking-[1px] uppercase text-blue-400 hover:text-blue-300 transition-colors"
           >
             GitHub <span aria-hidden="true">→</span>
@@ -52,6 +54,7 @@ export default function FeaturedProjectCard() {
         )}
         <Link
           href={`/projects/${project.id}`}
+          aria-label={`Full case study — ${project.name}`}
           className="text-[10px] tracking-[1px] uppercase text-neutral-500 hover:text-white transition-colors"
         >
           Full case study <span aria-hidden="true">→</span>

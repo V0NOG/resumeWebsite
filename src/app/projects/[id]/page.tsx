@@ -86,7 +86,7 @@ export default async function ProjectPage({
               Key Points
             </h2>
             <ul className="space-y-3">
-              {project.outcomes.map((outcome, i) => (
+              {project.outcomes.map((outcome) => (
                 <li key={outcome} className="flex items-start gap-3 text-neutral-500 text-sm">
                   <span className="text-blue-400 mt-0.5 shrink-0" aria-hidden="true">—</span>
                   {outcome}
