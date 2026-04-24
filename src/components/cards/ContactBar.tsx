@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSound } from "@/context/SoundContext";
 
 const FORMSPREE_ID = "YOUR_FORMSPREE_ID";
 
 export default function ContactBar() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const { playClick, playSuccess } = useSound();
 
   useEffect(() => {
     const handler = () => setOpen(true);
@@ -24,8 +26,13 @@ export default function ContactBar() {
         body: new FormData(form),
         headers: { Accept: "application/json" },
       });
-      setStatus(res.ok ? "sent" : "error");
-      if (res.ok) form.reset();
+      if (res.ok) {
+        setStatus("sent");
+        playSuccess();
+        form.reset();
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -35,7 +42,7 @@ export default function ContactBar() {
     <div
       id="contact"
       className="bento-card p-6"
-      style={{ gridColumn: "span 12", gridRow: "span 2" }}
+      style={{ gridColumn: "span 12", gridRow: open ? "span 3" : "span 2" }}
     >
       {!open ? (
         <div className="flex items-center justify-between h-full">
@@ -50,6 +57,7 @@ export default function ContactBar() {
           <div className="flex items-center gap-3">
             <a
               href="mailto:connor@drainas.com"
+              onClick={playClick}
               className="text-[10px] tracking-wide uppercase text-neutral-500 hover:text-white px-4 py-2 rounded-full border border-white/10 hover:border-white/20 transition-all"
             >
               connor@drainas.com
@@ -58,6 +66,7 @@ export default function ContactBar() {
               href="https://github.com/V0NOG"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={playClick}
               className="text-[10px] tracking-wide uppercase text-neutral-500 hover:text-white px-4 py-2 rounded-full border border-white/10 hover:border-white/20 transition-all"
             >
               GitHub
@@ -66,12 +75,13 @@ export default function ContactBar() {
               href="https://www.linkedin.com/in/connor-drainas-a3a306173/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={playClick}
               className="text-[10px] tracking-wide uppercase text-neutral-500 hover:text-white px-4 py-2 rounded-full border border-white/10 hover:border-white/20 transition-all"
             >
               LinkedIn
             </a>
             <button
-              onClick={() => setOpen(true)}
+              onClick={() => { playClick(); setOpen(true); }}
               className="text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-2.5 bg-white text-black rounded-full hover:bg-neutral-200 transition-colors"
             >
               Get in Touch
@@ -83,7 +93,7 @@ export default function ContactBar() {
           <div className="flex items-center justify-between mb-4">
             <p className="font-display font-bold text-white text-lg">Send a message</p>
             <button
-              onClick={() => setOpen(false)}
+              onClick={() => { playClick(); setOpen(false); }}
               className="text-neutral-600 hover:text-white text-sm transition-colors"
               aria-label="Close contact form"
             >

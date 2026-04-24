@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { useSound } from "@/context/SoundContext";
 
 export default function FeaturedProjectCard() {
   const project = projects.find((p) => p.featured);
+  const { playTick, playClick } = useSound();
   if (!project) return null;
 
   return (
@@ -47,6 +51,7 @@ export default function FeaturedProjectCard() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${project.name} on GitHub`}
+            onClick={playTick}
             className="text-[10px] tracking-[1px] uppercase text-blue-400 hover:text-blue-300 transition-colors"
           >
             GitHub <span aria-hidden="true">→</span>
@@ -55,6 +60,7 @@ export default function FeaturedProjectCard() {
         <Link
           href={`/projects/${project.id}`}
           aria-label={`Full case study — ${project.name}`}
+          onClick={playClick}
           className="text-[10px] tracking-[1px] uppercase text-neutral-500 hover:text-white transition-colors"
         >
           Full case study <span aria-hidden="true">→</span>

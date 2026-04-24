@@ -9,7 +9,7 @@ export default function SkillsCard() {
     >
       <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-400 mb-4">Core Skills</p>
 
-      <div className="grid grid-cols-2 gap-1.5 mb-4">
+      <div className="grid grid-cols-3 gap-1 mb-4">
         {coreSkills.map((skill) => (
           <span
             key={skill.label}

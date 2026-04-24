@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
+import { useSound } from "@/context/SoundContext";
 
 type Props = {
   project: Project;
@@ -11,11 +11,11 @@ type Props = {
 };
 
 export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
-  const [expanded, setExpanded] = useState(false);
+  const { playTick, playClick } = useSound();
 
   return (
     <div
-      className="bento-card p-5 flex flex-col overflow-hidden"
+      className="bento-card p-5 flex flex-col"
       style={{ gridColumn: `span ${colSpan}`, gridRow: `span ${rowSpan}` }}
     >
       <div className="flex flex-wrap gap-1.5 mb-2">
@@ -34,12 +34,6 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
       </h3>
       <p className="text-neutral-400 text-xs leading-relaxed mb-3">{project.description}</p>
 
-      {expanded && (
-        <p className="text-neutral-500 text-xs leading-relaxed mb-3 border-t border-white/5 pt-3">
-          {project.detail}
-        </p>
-      )}
-
       <div className="mt-auto flex items-center gap-3 flex-wrap">
         {project.liveUrl && (
           <a
@@ -47,6 +41,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Visit ${project.name}`}
+            onClick={playTick}
             className="text-[10px] text-blue-400 hover:text-blue-300 transition-colors tracking-wide"
           >
             Visit <span aria-hidden="true">→</span>
@@ -58,6 +53,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${project.name} on GitHub`}
+            onClick={playTick}
             className="text-[10px] text-neutral-500 hover:text-neutral-300 transition-colors tracking-wide"
           >
             GitHub <span aria-hidden="true">→</span>
@@ -66,17 +62,11 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
         <Link
           href={`/projects/${project.id}`}
           aria-label={`Details — ${project.name}`}
+          onClick={playClick}
           className="text-[10px] text-neutral-500 hover:text-white transition-colors tracking-wide"
         >
           Details <span aria-hidden="true">→</span>
         </Link>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="ml-auto text-[9px] text-neutral-600 hover:text-neutral-400 transition-colors uppercase tracking-wide"
-          aria-expanded={expanded}
-        >
-          {expanded ? "▲ Less" : "▼ More"}
-        </button>
       </div>
     </div>
   );

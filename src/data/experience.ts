@@ -5,6 +5,8 @@ export type Role = {
   location: string;
   period: string;
   bullets: string[];
+  detail: string;
+  tech: string[];
 };
 
 export const experience: Role[] = [
@@ -19,6 +21,9 @@ export const experience: Role[] = [
       "Managed AWS infrastructure (Lightsail, Route53), security hardening and Docker deployments",
       "Troubleshot production issues across APIs, networking and databases",
     ],
+    detail:
+      "Full-stack freelance engineering across multiple simultaneous clients. Built production web platforms end-to-end — from design brief through AWS deployment. Delivered a SaaS quotation tool with PDF export and full quote lifecycle management. Managed all infrastructure: AWS Lightsail instances, Route53 DNS, Docker containerisation, and SSL/security hardening. Ongoing support and client relationship management post-launch.",
+    tech: ["React", "Node.js", "MongoDB", "AWS Lightsail", "Route53", "Docker", "TypeScript"],
   },
   {
     id: "cloudcase-2022",
@@ -31,6 +36,9 @@ export const experience: Role[] = [
       "Implemented capital adequacy ratios and regulatory reporting features",
       "Acted as technical escalation point; mentored two engineers",
     ],
+    detail:
+      "Worked on a banking SaaS platform serving enterprise financial institutions across Australia. Implemented capital adequacy ratio calculations and regulatory reporting modules to meet APRA compliance requirements. Served as the technical escalation point for complex client issues spanning API integration, data migrations, and platform customisation. Mentored junior engineers on platform architecture and client communication practices.",
+    tech: ["JavaScript", "SQL", "REST APIs", "Financial regulation", "Banking SaaS"],
   },
   {
     id: "self-2020",
@@ -42,6 +50,9 @@ export const experience: Role[] = [
       "Delivered custom software systems and web platforms end-to-end",
       "Full ownership of architecture, development, deployment and client support",
     ],
+    detail:
+      "Sole-trader software practice delivering bespoke digital systems for small and medium businesses. Full end-to-end ownership across every engagement: requirements gathering, system architecture, development, deployment, and post-launch support. Projects included internal tooling, customer-facing web platforms, and data automation pipelines for Australian SMBs.",
+    tech: ["React", "Node.js", "PostgreSQL", "AWS", "Docker"],
   },
   {
     id: "speedy-2019",
@@ -53,6 +64,9 @@ export const experience: Role[] = [
       "Built a custom internal quotation portal used daily by staff",
       "Managed servers, networking and full-stack IT support",
     ],
+    detail:
+      "In-house IT and software engineering for a construction equipment hire company. Built a custom web-based quotation portal from scratch that replaced a manual Excel process and became a core daily operational tool for the sales team. Also responsible for Windows Server infrastructure, network configuration across multiple sites, and end-user IT support.",
+    tech: ["Custom web app", "Windows Server", "Networking", "SQL", "IT support"],
   },
   {
     id: "cloudcase-2017",
@@ -64,6 +78,9 @@ export const experience: Role[] = [
       "Configured front-end and back-end systems for high-profile financial clients",
       "Performed systems analysis and platform customisation",
     ],
+    detail:
+      "Configuration engineering role focused on customising the CloudCase banking SaaS platform for high-profile financial institution clients. Responsible for front-end and back-end system configuration, data mapping, and platform testing across multiple client environments. Worked directly with client stakeholders to translate regulatory and operational requirements into platform configuration.",
+    tech: ["Platform configuration", "JavaScript", "SQL", "Financial systems", "QA testing"],
   },
   {
     id: "axion-2015",
@@ -75,5 +92,8 @@ export const experience: Role[] = [
       "Front-end configuration and template development",
       "Early client-facing technical work",
     ],
+    detail:
+      "Entry-level systems engineering role working alongside senior engineers on enterprise client engagements. Responsible for front-end template configuration, technical documentation, and supporting client-facing deliverables. Built foundational skills in software configuration, stakeholder communication, and professional technical practice within a consultancy environment.",
+    tech: ["HTML/CSS", "Template configuration", "Technical documentation", "Client support"],
   },
 ];

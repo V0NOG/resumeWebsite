@@ -5,15 +5,15 @@ import SoundToggle from "@/components/SoundToggle";
 import { useSound } from "@/context/SoundContext";
 
 const links = [
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Work", href: "/#work" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const { playTick } = useSound();
+  const { playTick, playClick } = useSound();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -61,7 +61,7 @@ export default function Nav() {
           <SoundToggle />
           <button
             onClick={() => {
-              playTick();
+              playClick();
               window.dispatchEvent(new CustomEvent("open-contact"));
               document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
             }}

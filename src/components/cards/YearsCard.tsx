@@ -1,13 +1,49 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 export default function YearsCard() {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const fired = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !fired.current) {
+          fired.current = true;
+          const target = 6;
+          const duration = 1000;
+          const interval = duration / target;
+          let current = 0;
+          const timer = setInterval(() => {
+            current += 1;
+            setCount(current);
+            if (current >= target) clearInterval(timer);
+          }, interval);
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
+      ref={ref}
       className="bento-card p-6 flex flex-col justify-between"
       style={{ gridColumn: "span 3", gridRow: "span 4" }}
     >
       <div>
         <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-3">Experience</p>
-        <p className="font-display font-black text-white leading-none" style={{ fontSize: "52px" }}>
-          6+
+        <p
+          className="font-display font-black text-white leading-none"
+          style={{ fontSize: "52px", fontVariantNumeric: "tabular-nums" }}
+        >
+          {count}+
         </p>
         <p className="text-neutral-600 text-xs mt-1">years in production</p>
       </div>

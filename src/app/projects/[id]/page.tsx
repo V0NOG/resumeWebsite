@@ -29,20 +29,45 @@ export default async function ProjectPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const project = projects.find((p) => p.id === id);
-  if (!project) notFound();
+  const idx = projects.findIndex((p) => p.id === id);
+  if (idx === -1) notFound();
+
+  const project = projects[idx];
+  const prev = idx > 0 ? projects[idx - 1] : null;
+  const next = idx < projects.length - 1 ? projects[idx + 1] : null;
 
   return (
     <main className="min-h-screen">
       <Nav />
       <article className="max-w-4xl mx-auto px-8 pt-32 pb-24">
 
-        <Link
-          href="/#projects"
-          className="text-[10px] tracking-[2px] uppercase text-neutral-500 hover:text-white transition-colors mb-12 block"
-        >
-          <span aria-hidden="true">←</span> Back to projects
-        </Link>
+        {/* Top navigation */}
+        <div className="flex items-center justify-between mb-12">
+          <Link
+            href="/#projects"
+            className="text-[10px] tracking-[2px] uppercase text-neutral-500 hover:text-white transition-colors"
+          >
+            <span aria-hidden="true">←</span> All projects
+          </Link>
+          <div className="flex items-center gap-6">
+            {prev && (
+              <Link
+                href={`/projects/${prev.id}`}
+                className="text-[10px] tracking-[2px] uppercase text-neutral-600 hover:text-white transition-colors"
+              >
+                <span aria-hidden="true">←</span> {prev.name}
+              </Link>
+            )}
+            {next && (
+              <Link
+                href={`/projects/${next.id}`}
+                className="text-[10px] tracking-[2px] uppercase text-neutral-600 hover:text-white transition-colors"
+              >
+                {next.name} <span aria-hidden="true">→</span>
+              </Link>
+            )}
+          </div>
+        </div>
 
         <ScrollReveal delay={0}>
           <div className="flex flex-wrap gap-2 mb-6">
@@ -122,7 +147,7 @@ export default async function ProjectPage({
         )}
 
         <ScrollReveal delay={300}>
-          <div className="flex items-center gap-6 pt-6 border-t border-white/5">
+          <div className="flex items-center gap-6 pt-6 border-t border-white/5 mb-16">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -145,6 +170,36 @@ export default async function ProjectPage({
             )}
           </div>
         </ScrollReveal>
+
+        {/* Bottom prev/next navigation */}
+        <div className="grid grid-cols-2 gap-4 pt-8 border-t border-white/5">
+          {prev ? (
+            <Link
+              href={`/projects/${prev.id}`}
+              className="group bento-card p-5 flex flex-col gap-1 hover:border-white/15 transition-colors"
+            >
+              <span className="text-[9px] tracking-[2px] uppercase text-neutral-600 group-hover:text-neutral-400 transition-colors">
+                <span aria-hidden="true">←</span> Previous
+              </span>
+              <span className="text-white text-sm font-medium">{prev.name}</span>
+            </Link>
+          ) : (
+            <div />
+          )}
+          {next ? (
+            <Link
+              href={`/projects/${next.id}`}
+              className="group bento-card p-5 flex flex-col gap-1 items-end text-right hover:border-white/15 transition-colors"
+            >
+              <span className="text-[9px] tracking-[2px] uppercase text-neutral-600 group-hover:text-neutral-400 transition-colors">
+                Next <span aria-hidden="true">→</span>
+              </span>
+              <span className="text-white text-sm font-medium">{next.name}</span>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
 
       </article>
     </main>

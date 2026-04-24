@@ -88,28 +88,11 @@ body {
   animation: heroWordIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* ── Bento card cascade ── */
+/* ── cascadeIn keyframe (used by ExperienceCard children) ── */
 @keyframes cascadeIn {
   from { opacity: 0; transform: translateX(-24px) scale(0.97); }
   to   { opacity: 1; transform: translateX(0) scale(1); }
 }
-
-.bento-grid > * {
-  animation: cascadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.bento-grid > *:nth-child(1)  { animation-delay: 50ms; }
-.bento-grid > *:nth-child(2)  { animation-delay: 120ms; }
-.bento-grid > *:nth-child(3)  { animation-delay: 190ms; }
-.bento-grid > *:nth-child(4)  { animation-delay: 260ms; }
-.bento-grid > *:nth-child(5)  { animation-delay: 330ms; }
-.bento-grid > *:nth-child(6)  { animation-delay: 400ms; }
-.bento-grid > *:nth-child(7)  { animation-delay: 470ms; }
-.bento-grid > *:nth-child(8)  { animation-delay: 540ms; }
-.bento-grid > *:nth-child(9)  { animation-delay: 610ms; }
-.bento-grid > *:nth-child(10) { animation-delay: 680ms; }
-.bento-grid > *:nth-child(11) { animation-delay: 750ms; }
-.bento-grid > *:nth-child(12) { animation-delay: 820ms; }
 
 /* ── Bento card hover — scale lift + blue glow ── */
 .bento-card {

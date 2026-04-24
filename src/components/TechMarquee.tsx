@@ -20,7 +20,7 @@ function MarqueeTrack() {
 
 export default function TechMarquee() {
   return (
-    <div className="relative overflow-hidden py-6 border-y border-white/5" aria-hidden="true">
+    <div className="relative overflow-hidden py-6 mb-6 border-y border-white/5" aria-hidden="true">
       <div className="flex gap-10">
         <MarqueeTrack />
         <MarqueeTrack />
