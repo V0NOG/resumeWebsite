@@ -77,7 +77,7 @@ export default async function ProjectPage({
         )}
 
         <div className="border-l border-white/5 pl-6 mb-10">
-          <p className="text-neutral-500 text-base leading-relaxed">{project.detail}</p>
+          <p className="text-neutral-400 text-base leading-relaxed">{project.detail}</p>
         </div>
 
         {project.outcomes.length > 0 && (
@@ -87,7 +87,7 @@ export default async function ProjectPage({
             </h2>
             <ul className="space-y-3">
               {project.outcomes.map((outcome) => (
-                <li key={outcome} className="flex items-start gap-3 text-neutral-500 text-sm">
+                <li key={outcome} className="flex items-start gap-3 text-neutral-400 text-sm">
                   <span className="text-blue-400 mt-0.5 shrink-0" aria-hidden="true">—</span>
                   {outcome}
                 </li>

@@ -32,7 +32,7 @@ export default function ProjectCard({ project, colSpan, rowSpan }: Props) {
       <h3 className="font-display font-bold text-white text-base leading-tight mb-1">
         {project.name}
       </h3>
-      <p className="text-neutral-600 text-xs leading-relaxed mb-3">{project.description}</p>
+      <p className="text-neutral-400 text-xs leading-relaxed mb-3">{project.description}</p>
 
       {expanded && (
         <p className="text-neutral-500 text-xs leading-relaxed mb-3 border-t border-white/5 pt-3">

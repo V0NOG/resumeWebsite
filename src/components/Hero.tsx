@@ -3,9 +3,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-8 md:px-16 max-w-7xl mx-auto">
 
       {/* Eyebrow */}
-      <p className="flex items-center gap-4 mb-8 text-neutral-600 text-[10px] tracking-[3px] uppercase">
+      <p className="flex items-center gap-4 mb-8 text-neutral-400 text-[10px] tracking-[3px] uppercase">
         <span className="w-8 h-px bg-neutral-700 block" />
-        Available · Dual EU Citizen · Relocating Europe Sept 2026
+        Available · Dual EU Citizen · Relocating Europe August 2026
       </p>
 
       {/* Editorial display type — Chiara Luzzana style */}
@@ -18,7 +18,7 @@ export default function Hero() {
 
       {/* Sub-row */}
       <div className="flex flex-col md:flex-row gap-8 md:items-center">
-        <p className="text-neutral-500 text-sm leading-relaxed border-l border-neutral-800 pl-5 max-w-xs">
+        <p className="text-neutral-300 text-sm leading-relaxed border-l border-neutral-800 pl-5 max-w-xs">
           Connor Drainas — 6+ years shipping production SaaS across finance and custom
           product environments. React, Node.js, AWS, Docker.
         </p>
@@ -33,7 +33,7 @@ export default function Hero() {
           <a
             href="/resume.pdf"
             download="Connor_Drainas_Resume.pdf"
-            className="text-[11px] tracking-[1.5px] uppercase text-neutral-500 hover:text-white transition-colors"
+            className="text-[11px] tracking-[1.5px] uppercase text-neutral-400 hover:text-white transition-colors"
           >
             <span aria-hidden="true">↓ </span>Download CV
           </a>

@@ -37,7 +37,7 @@ export default function ContactBar() {
             <p className="font-display font-bold text-white text-xl mb-1">
               Open to EU opportunities
             </p>
-            <p className="text-neutral-600 text-xs">
+            <p className="text-neutral-400 text-xs">
               Greek–Australian dual citizen · Full EU right to work · Relocating September 2026
             </p>
           </div>
@@ -90,14 +90,14 @@ export default function ContactBar() {
               type="text"
               required
               placeholder="Name"
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-blue-500/50 col-span-1"
+              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-blue-500/50 col-span-1"
             />
             <input
               name="email"
               type="email"
               required
               placeholder="Email"
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-blue-500/50 col-span-1"
+              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-blue-500/50 col-span-1"
             />
             <button
               type="submit"
@@ -114,7 +114,7 @@ export default function ContactBar() {
               required
               rows={2}
               placeholder="Message"
-              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-blue-500/50 col-span-3 resize-none"
+              className="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-blue-500/50 col-span-3 resize-none"
             />
           </form>
         </div>
