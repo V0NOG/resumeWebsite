@@ -40,7 +40,7 @@ export default async function ProjectPage({
           href="/#projects"
           className="text-[10px] tracking-[2px] uppercase text-neutral-600 hover:text-white transition-colors mb-12 block"
         >
-          ← Back to projects
+          <span aria-hidden="true">←</span> Back to projects
         </Link>
 
         <div className="flex flex-wrap gap-2 mb-6">
@@ -82,12 +82,12 @@ export default async function ProjectPage({
 
         {project.outcomes.length > 0 && (
           <div className="mb-10">
-            <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-4">
+            <h2 className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-4">
               Key Points
-            </p>
+            </h2>
             <ul className="space-y-3">
               {project.outcomes.map((outcome, i) => (
-                <li key={i} className="flex items-start gap-3 text-neutral-500 text-sm">
+                <li key={outcome} className="flex items-start gap-3 text-neutral-500 text-sm">
                   <span className="text-blue-400 mt-0.5 shrink-0" aria-hidden="true">—</span>
                   {outcome}
                 </li>
@@ -98,9 +98,9 @@ export default async function ProjectPage({
 
         {project.tech.length > 0 && (
           <div className="mb-10">
-            <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-3">
+            <h2 className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-3">
               Tech Stack
-            </p>
+            </h2>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <span
@@ -132,7 +132,7 @@ export default async function ProjectPage({
               rel="noopener noreferrer"
               className="text-[11px] tracking-[1.5px] uppercase text-neutral-500 hover:text-white transition-colors"
             >
-              View on GitHub →
+              View on GitHub <span aria-hidden="true">→</span>
             </a>
           )}
         </div>
