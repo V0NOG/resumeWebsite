@@ -3,7 +3,10 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-8 md:px-16 max-w-7xl mx-auto">
 
       {/* Eyebrow */}
-      <p className="flex items-center gap-4 mb-8 text-neutral-400 text-[10px] tracking-[3px] uppercase">
+      <p
+        className="hero-line flex items-center gap-4 mb-8 text-neutral-400 text-[10px] tracking-[3px] uppercase"
+        style={{ animationDelay: "0ms" }}
+      >
         <span className="w-8 h-px bg-neutral-700 block" />
         Available · Dual EU Citizen · Relocating Europe August 2026
       </p>
@@ -11,13 +14,16 @@ export default function Hero() {
       {/* Editorial display type — Chiara Luzzana style */}
       <h1 className="font-display font-black leading-[0.95] tracking-[-2px] mb-10"
            style={{ fontSize: "clamp(48px, 7.5vw, 110px)" }}>
-        <span className="text-stroke block">FULL STACK</span>
-        <span className="text-white block">SOFTWARE ENGINEER</span>
-        <span className="text-stroke-blue block">+ CLOUD</span>
+        <span className="text-stroke hero-line" style={{ animationDelay: "80ms" }}>FULL STACK</span>
+        <span className="text-white hero-line" style={{ animationDelay: "200ms" }}>SOFTWARE ENGINEER</span>
+        <span className="text-stroke-blue hero-line" style={{ animationDelay: "320ms" }}>+ CLOUD</span>
       </h1>
 
       {/* Sub-row */}
-      <div className="flex flex-col md:flex-row gap-8 md:items-center">
+      <div
+        className="hero-line flex flex-col md:flex-row gap-8 md:items-center"
+        style={{ animationDelay: "480ms" }}
+      >
         <p className="text-neutral-300 text-sm leading-relaxed border-l border-neutral-800 pl-5 max-w-xs">
           Connor Drainas — 6+ years shipping production SaaS across finance and custom
           product environments. React, Node.js, AWS, Docker.

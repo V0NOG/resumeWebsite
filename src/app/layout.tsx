@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
+import { SoundProvider } from "@/context/SoundContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,7 +31,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        {children}
+        <SoundProvider>
+          <SmoothScroll />
+          {children}
+        </SoundProvider>
       </body>
     </html>
   );

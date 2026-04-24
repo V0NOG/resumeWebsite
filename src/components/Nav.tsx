@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import SoundToggle from "@/components/SoundToggle";
+import { useSound } from "@/context/SoundContext";
 
 const links = [
   { label: "Skills", href: "#skills" },
@@ -11,6 +13,7 @@ const links = [
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const { playTick } = useSound();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -33,6 +36,7 @@ export default function Nav() {
         <a
           href="#"
           aria-label="Home"
+          onClick={playTick}
           className="font-display font-bold text-lg text-white tracking-tight"
         >
           C·D
@@ -44,20 +48,25 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="py-1 text-[10px] font-medium tracking-[2px] uppercase text-neutral-500 hover:text-white transition-colors duration-200"
+              onClick={playTick}
+              className="nav-link py-1 text-[10px] font-medium tracking-[2px] uppercase text-neutral-400 hover:text-white transition-colors duration-200"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-2.5 rounded-full border border-white/15 text-white hover:bg-white hover:text-black transition-all duration-200"
-        >
-          Hire Me
-        </a>
+        {/* Right side: sound toggle + CTA */}
+        <div className="flex items-center gap-4">
+          <SoundToggle />
+          <a
+            href="#contact"
+            onClick={playTick}
+            className="text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-2.5 rounded-full border border-white/15 text-white hover:bg-white hover:text-black transition-all duration-200"
+          >
+            Hire Me
+          </a>
+        </div>
       </div>
     </nav>
   );
