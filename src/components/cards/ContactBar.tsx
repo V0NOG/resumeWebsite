@@ -57,7 +57,7 @@ export default function ContactBar() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/YOUR_LINKEDIN_SLUG"
+              href="https://www.linkedin.com/in/connor-drainas-a3a306173/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[10px] tracking-wide uppercase text-neutral-500 hover:text-white px-4 py-2 rounded-full border border-white/10 hover:border-white/20 transition-all"

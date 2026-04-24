@@ -18,6 +18,9 @@ const projectLayouts: { colSpan: number; rowSpan: number }[] = [
   { colSpan: 4, rowSpan: 2 },
   { colSpan: 4, rowSpan: 2 },
   { colSpan: 4, rowSpan: 2 },
+  { colSpan: 4, rowSpan: 2 },
+  { colSpan: 4, rowSpan: 2 },
+  { colSpan: 4, rowSpan: 2 },
 ];
 
 export default function Home() {
