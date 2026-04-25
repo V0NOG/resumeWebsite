@@ -20,6 +20,11 @@ const amber: Omit<SkillTag, "label"> = {
   bg: "bg-amber-500/10",
   border: "border-amber-500/20",
 };
+const teal: Omit<SkillTag, "label"> = {
+  color: "text-sky-400",
+  bg: "bg-sky-500/10",
+  border: "border-sky-500/20",
+};
 
 export const coreSkills: SkillTag[] = [
   { label: "React", ...blue },
@@ -31,10 +36,7 @@ export const coreSkills: SkillTag[] = [
   { label: "MongoDB", ...blue },
   { label: "GraphQL", ...purple },
   { label: "Docker", ...green },
-  { label: "Kubernetes", ...green },
   { label: "AWS", ...green },
-  { label: "Terraform", ...green },
-  { label: "Redis", ...blue },
   { label: "Linux", ...blue },
   { label: "Bash", ...blue },
   { label: "Git", ...blue },
@@ -46,4 +48,11 @@ export const securitySkills: SkillTag[] = [
   { label: "Secure Auth", ...amber },
   { label: "E2E Encryption", ...amber },
   { label: "Network Security", ...amber },
+];
+
+export const aiSkills: SkillTag[] = [
+  { label: "Claude Code", ...teal },
+  { label: "Prompt Engineering", ...teal },
+  { label: "Agentic Workflows", ...teal },
+  { label: "LLM APIs", ...teal },
 ];

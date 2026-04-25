@@ -1,7 +1,7 @@
 const items = [
   "React", "TypeScript", "Next.js", "Node.js", "Python", "PostgreSQL",
-  "MongoDB", "Docker", "Kubernetes", "AWS", "Terraform", "Redis",
-  "GraphQL", "Linux", "Bash", "Git", "FastAPI", "WebSockets",
+  "MongoDB", "Docker", "AWS", "GraphQL", "Linux", "Bash", "Git",
+  "FastAPI", "WebSockets", "Prompt Engineering", "Agentic Workflows",
 ];
 
 function MarqueeTrack() {

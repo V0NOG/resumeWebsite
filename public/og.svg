@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0f"/>
+
+  <!-- Dot grid pattern -->
+  <defs>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#1a1a2e"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Blue accent bar -->
+  <rect x="80" y="230" width="3" height="100" fill="#3b82f6" rx="2"/>
+
+  <!-- Name -->
+  <text x="108" y="295" font-family="Georgia, serif" font-size="68" font-weight="900" fill="white" letter-spacing="-1">Connor Drainas</text>
+
+  <!-- Title -->
+  <text x="110" y="348" font-family="-apple-system, system-ui, sans-serif" font-size="18" fill="#525252" letter-spacing="3">FULL STACK ENGINEER · CLOUD · CYBERSECURITY</text>
+
+  <!-- Divider -->
+  <rect x="110" y="378" width="80" height="1" fill="#1e3a5f" rx="1"/>
+
+  <!-- Availability dot + text -->
+  <circle cx="110" cy="412" r="5" fill="#34d399"/>
+  <text x="126" y="418" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#34d399" letter-spacing="2">OPEN TO EU ROLES · RELOCATING AUGUST 2026</text>
+
+  <!-- Tech pills row -->
+  <text x="110" y="478" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#404040" letter-spacing="1.5">React · TypeScript · Next.js · Node.js · Python · AWS · Docker</text>
+
+  <!-- Domain -->
+  <text x="1120" y="590" text-anchor="end" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#2a2a3a" letter-spacing="1">connor.drainas.com</text>
+</svg>

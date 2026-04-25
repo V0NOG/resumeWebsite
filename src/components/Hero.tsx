@@ -6,7 +6,7 @@ export default function Hero() {
   const { playClick, playTick } = useSound();
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-8 md:px-16 max-w-7xl mx-auto">
+    <section className="relative min-h-screen flex flex-col justify-center pt-24 pb-16 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto">
 
       {/* Eyebrow */}
       <p

@@ -8,34 +8,38 @@ export default function YearsCard() {
   const fired = useRef(false);
 
   useEffect(() => {
+    const runCounter = () => {
+      if (fired.current) return;
+      fired.current = true;
+      const target = 6;
+      const duration = 1000;
+      const interval = duration / target;
+      let current = 0;
+      const timer = setInterval(() => {
+        current += 1;
+        setCount(current);
+        if (current >= target) clearInterval(timer);
+      }, interval);
+    };
+
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !fired.current) {
-          fired.current = true;
-          const target = 6;
-          const duration = 1000;
-          const interval = duration / target;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += 1;
-            setCount(current);
-            if (current >= target) clearInterval(timer);
-          }, interval);
-        }
-      },
-      { threshold: 0.5 }
+      ([entry]) => { if (entry.isIntersecting) runCounter(); },
+      { threshold: 0.1 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Fallback: run after 1.5s if scroll never triggered it
+    const fallback = setTimeout(runCounter, 1500);
+    return () => { observer.disconnect(); clearTimeout(fallback); };
   }, []);
 
   return (
     <div
       ref={ref}
       className="bento-card p-6 flex flex-col justify-between"
-      style={{ gridColumn: "span 3", gridRow: "span 4" }}
+      style={{ gridColumn: "span 3", gridRow: "span 5" }}
     >
       <div>
         <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-600 mb-3">Experience</p>

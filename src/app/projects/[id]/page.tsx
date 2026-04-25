@@ -39,7 +39,7 @@ export default async function ProjectPage({
   return (
     <main className="min-h-screen">
       <Nav />
-      <article className="max-w-4xl mx-auto px-8 pt-32 pb-24">
+      <article className="max-w-4xl mx-auto px-4 md:px-8 pt-24 md:pt-32 pb-16 md:pb-24">
 
         {/* Top navigation */}
         <div className="flex items-center justify-between mb-12">

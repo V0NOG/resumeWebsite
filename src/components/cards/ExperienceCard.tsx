@@ -30,14 +30,14 @@ export default function ExperienceCard() {
 
       <div className="relative">
         <div
-          className="absolute left-0 right-0 h-px"
+          className="hidden sm:block absolute left-0 right-0 h-px"
           style={{
             top: "10px",
             background: "linear-gradient(to right, rgba(59,130,246,0.3), rgba(139,92,246,0.2), rgba(34,197,94,0.1), transparent)",
           }}
         />
 
-        <div className="grid grid-cols-6 gap-3 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-3 items-stretch">
           {experience.map((role, i) => {
             const accent = accents[i] ?? accents[accents.length - 1];
             return (

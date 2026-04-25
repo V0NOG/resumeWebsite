@@ -142,6 +142,61 @@ body {
   width: 100%;
 }
 
+/* ── Print / Save PDF styles (resume page) ── */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    background: white !important;
+    background-image: none !important;
+    color: #111 !important;
+  }
+
+  nav,
+  .print-hide {
+    display: none !important;
+  }
+
+  .bento-card {
+    background: white !important;
+    border-color: #e5e7eb !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+
+  .text-neutral-300,
+  .text-neutral-400,
+  .text-neutral-500 {
+    color: #374151 !important;
+  }
+
+  .text-neutral-600,
+  .text-neutral-700 {
+    color: #6b7280 !important;
+  }
+
+  .text-white {
+    color: #111 !important;
+  }
+
+  .border-white\/5,
+  .border-white\/10 {
+    border-color: #e5e7eb !important;
+  }
+
+  @page {
+    margin: 1.5cm;
+  }
+}
+
 /* Mobile bento grid — collapse to single column */
 @media (max-width: 767px) {
   .bento-grid {
