@@ -13,6 +13,11 @@
   --purple: #8b5cf6;
   --green: #22c55e;
   --amber: #f59e0b;
+  --canvas: #0a0a0f;
+}
+
+html.light {
+  --canvas: #eeecea;
 }
 
 html {
@@ -110,6 +115,33 @@ body {
   border-color: rgba(59, 130, 246, 0.3);
 }
 
+/* ── Contact form animations ── */
+@keyframes formIn {
+  0%   { opacity: 0; transform: scale(0.9) translateY(-28px); filter: blur(8px); }
+  60%  { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+}
+@keyframes formOut {
+  0%   { transform: scale(1, 1)    translateY(0);  opacity: 1; }
+  14%  { transform: scale(1.05, 0.95) translateY(0);  opacity: 1; }
+  32%  { transform: scale(0.96, 1.06) translateY(-3px); opacity: 1; }
+  58%  { transform: scale(0.82, 0.82) translateY(8px);  opacity: 0.85; }
+  100% { transform: scale(0.3, 0.3)  translateY(16px); opacity: 0; }
+}
+@keyframes fieldIn {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.94); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes successIn {
+  0%   { opacity: 0; transform: scale(0.85) translateY(20px); }
+  65%  { transform: scale(1.04) translateY(-4px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes sendPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+  50%       { box-shadow: 0 0 0 6px rgba(255,255,255,0); }
+}
+
 /* ── Scroll reveal (used on project detail page) ── */
 .reveal {
   opacity: 0;
@@ -141,6 +173,58 @@ body {
 .nav-link:hover::after {
   width: 100%;
 }
+
+/* ── Light theme ── */
+html.light body {
+  background-color: #eeecea;
+  background-image: radial-gradient(circle, #d6d3ce 1px, transparent 1px);
+  color: #1a1a2e;
+}
+
+html.light .bento-card {
+  background: rgba(255, 254, 252, 0.65);
+  border-color: rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+html.light .bento-card:hover {
+  transform: scale(1.025) translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Text colour overrides */
+html.light .text-white { color: #1a1a2e !important; }
+html.light .hover\:text-white:hover { color: #1a1a2e !important; }
+html.light .text-neutral-300 { color: #2d2d45 !important; }
+html.light .text-neutral-400 { color: #4a4a65 !important; }
+html.light .hover\:text-neutral-300:hover { color: #1a1a2e !important; }
+html.light .text-neutral-500 { color: #6b6b85 !important; }
+html.light .text-neutral-600 { color: #8e8ea8 !important; }
+html.light .text-neutral-700 { color: #9e9eb8 !important; }
+
+/* Primary CTA buttons: flip to dark */
+html.light .bg-white { background-color: #1a1a2e !important; }
+html.light .hover\:bg-neutral-200:hover { background-color: #2d2d45 !important; }
+html.light .text-black { color: #f0ede8 !important; }
+
+/* Borders */
+html.light .border-white\/5 { border-color: rgba(0, 0, 0, 0.05) !important; }
+html.light .border-white\/10 { border-color: rgba(0, 0, 0, 0.08) !important; }
+html.light .border-white\/15 { border-color: rgba(0, 0, 0, 0.12) !important; }
+html.light .hover\:border-white\/15:hover { border-color: rgba(0, 0, 0, 0.2) !important; }
+html.light .border-white\/20 { border-color: rgba(0, 0, 0, 0.15) !important; }
+
+/* Form inputs */
+html.light .bg-white\/5 { background-color: rgba(0, 0, 0, 0.04) !important; }
+
+/* Security skill amber tags → readable warm orange in light mode */
+html.light .text-amber-400 { color: #92400e !important; }
+html.light .bg-amber-500\/10 { background-color: rgba(146, 64, 14, 0.07) !important; }
+html.light .border-amber-500\/20 { border-color: rgba(146, 64, 14, 0.18) !important; }
+
+/* Hero stroke text */
+html.light .text-stroke { -webkit-text-stroke: 1.5px rgba(26, 26, 46, 0.3); }
 
 /* ── Print / Save PDF styles (resume page) ── */
 @media print {

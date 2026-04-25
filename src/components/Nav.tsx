@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import SoundToggle from "@/components/SoundToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useSound } from "@/context/SoundContext";
+import { useTheme } from "@/context/ThemeContext";
 
 const links = [
   { label: "Skills", href: "/#skills" },
@@ -16,6 +18,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { playTick, playClick } = useSound();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -29,7 +32,9 @@ export default function Nav() {
       aria-label="Site navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || mobileOpen
-          ? "bg-[#0a0a0f]/95 backdrop-blur-md border-b border-white/5"
+          ? theme === "light"
+            ? "bg-white/95 backdrop-blur-md border-b border-black/5"
+            : "bg-[#0a0a0f]/95 backdrop-blur-md border-b border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -60,12 +65,12 @@ export default function Nav() {
 
         {/* Right side */}
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <SoundToggle />
           <button
             onClick={() => {
               playClick();
               window.dispatchEvent(new CustomEvent("open-contact"));
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
             }}
             className="hidden md:block text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-2.5 rounded-full border border-white/15 text-white hover:bg-white hover:text-black transition-all duration-200"
           >
@@ -106,7 +111,6 @@ export default function Nav() {
               playClick();
               setMobileOpen(false);
               window.dispatchEvent(new CustomEvent("open-contact"));
-              setTimeout(() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }), 150);
             }}
             className="mt-1 text-[10px] font-semibold tracking-[1.5px] uppercase px-5 py-3 rounded-full border border-white/15 text-white hover:bg-white hover:text-black transition-all w-fit"
           >

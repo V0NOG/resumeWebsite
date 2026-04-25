@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { SoundProvider } from "@/context/SoundContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,11 +42,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Hardcoded constant — no user input, safe from XSS. Prevents flash of wrong theme. */}
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.add('light');}else if(!t&&!window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.classList.add('light');}}catch(e){}})();` }} />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <SoundProvider>
-          <SmoothScroll />
-          {children}
-        </SoundProvider>
+        <ThemeProvider>
+          <SoundProvider>
+            <SmoothScroll />
+            {children}
+          </SoundProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
