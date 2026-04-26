@@ -11,12 +11,11 @@ export default function AboutCard() {
       </h2>
 
       <p className="text-neutral-500 text-xs leading-relaxed mb-2">
-        Dual Greek–Australian citizen with 6+ years building and shipping full-stack
-        applications across finance and custom product environments.
+        Greek EU citizen and Australian citizen with 6+ years building and shipping
+        full-stack applications across finance and custom product environments.
       </p>
       <p className="text-neutral-500 text-xs leading-relaxed mb-2">
-        Final semester of a Bachelor of CS (Cybersecurity major) at UoW. Greek citizenship
-        gives full EU right to work.
+        Final semester of a Bachelor of CS (Cybersecurity major) at UoW. Full EU right to work.
       </p>
       <p className="text-neutral-500 text-xs leading-relaxed">
         Strong interest in AI-assisted development — using agentic workflows, LLM APIs,

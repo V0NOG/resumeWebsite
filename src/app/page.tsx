@@ -35,6 +35,19 @@ export default function Home() {
         <SkillsCard />
         <YearsCard />
         <ExperienceCard />
+        <div
+          id="projects"
+          style={{ gridColumn: "span 12", gridRow: "span 2" }}
+          className="flex items-end pb-1 px-1"
+        >
+          <h2
+            className="font-display font-black leading-[0.92] tracking-[-2px]"
+            style={{ fontSize: "clamp(36px, 5.5vw, 80px)" }}
+          >
+            <span className="text-stroke">PRODUCTS</span>
+            <span className="text-stroke-blue"> + PROJECTS</span>
+          </h2>
+        </div>
         <FeaturedProjectCard />
         {nonFeatured.map((project, i) => (
           <ProjectCard

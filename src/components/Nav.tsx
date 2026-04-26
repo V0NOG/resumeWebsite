@@ -46,7 +46,8 @@ export default function Nav() {
           onClick={playTick}
           className="font-display font-bold text-lg text-white tracking-tight"
         >
-          C·D
+          <span className="hidden md:inline">Connor Drainas</span>
+          <span className="md:hidden">C·D</span>
         </a>
 
         {/* Desktop links */}

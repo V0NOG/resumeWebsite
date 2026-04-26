@@ -43,10 +43,7 @@ export default function ResumePage() {
               Open to EU roles
             </div>
             <span className="text-[9px] text-neutral-600 tracking-wide">
-              Greek–Australian dual citizen · Full EU right to work
-            </span>
-            <span className="text-[9px] text-neutral-600 tracking-wide">
-              Relocating August 2026
+              Greek EU Citizen &amp; Australian Citizen · Full EU right to work
             </span>
           </div>
         </div>
@@ -126,14 +123,25 @@ export default function ResumePage() {
         {/* Education */}
         <section className="mb-12">
           <p className="text-[9px] tracking-[2.5px] uppercase text-neutral-500 mb-6">Education</p>
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-l-2 border-purple-500/30 pl-5">
-            <div>
-              <h3 className="text-white text-sm font-semibold mb-0.5">
-                Bachelor of Computer Science — Cybersecurity Major
-              </h3>
-              <p className="text-neutral-500 text-xs">University of Wollongong</p>
+          <div className="space-y-6">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-l-2 border-purple-500/30 pl-5">
+              <div>
+                <h3 className="text-white text-sm font-semibold mb-0.5">
+                  Bachelor of Computer Science — Cybersecurity Major
+                </h3>
+                <p className="text-neutral-500 text-xs">University of Wollongong</p>
+              </div>
+              <p className="text-neutral-600 text-[10px] tracking-wide shrink-0">2021 – Present</p>
             </div>
-            <p className="text-neutral-600 text-[10px] tracking-wide shrink-0">2021 – Present</p>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 border-l-2 border-purple-500/20 pl-5">
+              <div>
+                <h3 className="text-white text-sm font-semibold mb-0.5">
+                  Diploma of Information Technology
+                </h3>
+                <p className="text-neutral-500 text-xs">University of Wollongong</p>
+              </div>
+              <p className="text-neutral-600 text-[10px] tracking-wide shrink-0">2019 – 2021</p>
+            </div>
           </div>
         </section>
 

@@ -14,7 +14,7 @@ export default function Hero() {
         style={{ animationDelay: "0ms" }}
       >
         <span className="w-8 h-px bg-neutral-700 block" />
-        Available · Dual EU Citizen · Relocating Europe August 2026
+        Available · Greek EU Citizen · Australian Citizen
       </p>
 
       {/* Headline */}
@@ -33,7 +33,9 @@ export default function Hero() {
         style={{ animationDelay: "420ms" }}
       >
         Connor Drainas — 6+ years shipping production SaaS across finance and custom
-        product environments. React, Node.js, AWS, Docker.
+        product environments. React, Node.js, AWS, Docker. Experienced building
+        agentic systems and LLM-powered workflows — shipping faster with Claude Code
+        and modern AI tooling.
       </p>
 
       {/* CTA buttons — no hero-line class (that sets display:block, breaking flex) */}
