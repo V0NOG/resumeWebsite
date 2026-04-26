@@ -46,7 +46,7 @@ export default function Nav() {
           onClick={playTick}
           className="font-display font-bold text-lg text-white tracking-tight"
         >
-          <span className="hidden md:inline">Connor Drainas</span>
+          <span className="hidden md:inline tracking-[2px] text-sm">CONNOR DRAINAS</span>
           <span className="md:hidden">C·D</span>
         </a>
 
